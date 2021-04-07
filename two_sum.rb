@@ -12,6 +12,6 @@ def two_sum(integers, target)
     numbers[target - i] = 1   # + (numbers[target - i] || 0)
   end
   integers.any? do |i|
-    numbers[i]                # and numbers[i] >= 1 + (2 * i == target ? 1 : 0)
+    numbers[i]                # and numbers[i] > (2 * i == target ? 1 : 0)
   end
 end
