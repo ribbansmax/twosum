@@ -7,4 +7,11 @@
 
 def two_sum(integers, target) 
   # your code goes here
+  numbers = Hash.new
+  integers.each do |i|
+    numbers[target - i] = (numbers[target - i] || 0) + 1
+  end
+  integers.any? do |i|
+    numbers[i] and numbers[i] >= 1 + (2 * i == target ? 1 : 0)
+  end
 end
