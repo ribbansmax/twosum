@@ -6,12 +6,12 @@
 # 2.) Example given `[2,3,4,5], 11` you function/method will return false since no two numbers would equal 11
 
 def two_sum(integers, target) 
-  # your code goes here
+  # uncomment annotations below to accept non-unique integers
   numbers = Hash.new
   integers.each do |i|
-    numbers[target - i] = (numbers[target - i] || 0) + 1
+    numbers[target - i] = 1   # + (numbers[target - i] || 0)
   end
   integers.any? do |i|
-    numbers[i] and numbers[i] >= 1 + (2 * i == target ? 1 : 0)
+    numbers[i]                # and numbers[i] >= 1 + (2 * i == target ? 1 : 0)
   end
 end
